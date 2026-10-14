@@ -1,0 +1,29 @@
+# Audit rubric
+
+All twelve areas must appear in the report. Use Not applicable with a reason where needed. Public inspection supports observations, not certification.
+
+| Area | Evidence to collect | Decision rule |
+| --- | --- | --- |
+| SEO | Unique titles and descriptions; H1 structure; status codes; canonicals; index directives; internal links; supported schema; content and CTA alignment. | Report affected/sample counts. A high Lighthouse SEO score does not prove ranking strength. A missing description is a snippet-control gap, not a guaranteed ranking loss. |
+| GMB / Google Business Profile | Match name, domain, location and phone; retain CID/place ID; category, claimed state, hours, reviews, photos and booking URL. | Verify conflicting contacts with the owner. Reviews and ratings need a dated provider source. Never infer absence from one failed search. Check eligibility before advising an online-only business to create a profile. |
+| Performance | Mobile and desktop score, LCP, CLS, TBT, image/font/script opportunities; CrUX LCP/INP/CLS and reporting window if available. | Label lab versus field. LCP good <=2.5 s; CLS <=0.1; field INP <=200 ms, subject to current official guidance. State device and run count in the client report; retain collection location in private evidence. Do not add estimated savings together or promise business uplift. |
+| Sitemap structure | robots.txt, index and child maps; response codes; canonical and indexable URLs; stale, test, tag, author and utility entries. | An XML file is not proof of submission or indexing. Review value before removal; preserve useful linked URLs or redirect to a relevant replacement. |
+| AI visibility | Crawlable HTML, clear entity/service/location information, useful answers, original proof, consistent contact information; optional neutral prompt samples. | Readiness is not observed visibility. Report mentions/citations as n/N valid samples with engine, date and market. Exclude failed samples. No claim that schema or llms.txt guarantees inclusion. |
+| Security | HTTP-to-HTTPS behavior, TLS errors, mixed content, visible headers, publicly exposed debug information and form transport. | Read-only checks only. Missing CSP is a hardening opportunity, not proof of exploitation. Do not claim the site is secure or compromised from headers or a WordPress version. No password, port, exploit or admin testing. |
+| Total page count | Distinct sitemap content URLs; distinct archive URLs; crawled successful HTML destinations; redirects; errors; scope cap. | Label counts by source. Deduplicate fragments, redirects and canonical variants. Do not use search result estimates as a total. Complete the reachable public crawl and reconcile canonical duplicates. Keep private, orphan and unlinked-page limits in the private record unless they materially affect the client conclusion. |
+| Regional insights | Verified service area, language, currency, local contact consistency, relevant service/location pages, local proof and seasonal context if evidenced. | Apply only when geography affects buying. Separate public targeting from actual customer geography. Avoid generic doorway pages and unsupported legal advice. |
+| Competitor analysis | Two relevant businesses; equivalent page or offer; local specificity, CTA, proof, service depth and pricing where public. | Link each page, date the snapshot, and separate observation from inference. Do not compare the prospect's homepage speed against another site's best score or claim market share from a search sample. |
+| Responsiveness | Screenshots and behavior at common mobile, tablet and desktop widths; overflow, zoom, menu, CTA, text, tap controls and visible form fields. | State pages and devices sampled. CSS width emulation is not full real-device coverage. Preserve working layouts. Check visual and interaction defects separately. |
+| Design & UX | Accessibility, grid and block alignment, buttons and states, typography hierarchy and line length, sizing, spacing, padding, contrast, and navigation/conversion mistakes. Inspect homepage, one service page and the main conversion path on desktop and mobile. | Present one combined section with 2-3 evidence-backed findings. Measure actual gaps, dimensions, ratios and affected controls. Separate functional failures from aesthetic judgment. Keep checklist details private; do not invent a defect in every category. |
+| Agent readiness / Google Lighthouse | Run the Agentic Browsing category; save accessibility-tree, CLS, WebMCP, llms.txt and ARD outcomes when supported by that version. | Distinguish pass, failure, not applicable, blocked and unsupported checks. Do not turn missing runtime support into a site defect. Keep agent usability separate from AI answer visibility. |
+
+Also inspect the primary conversion path. Show a broken booking, contact or call path prominently even though conversion is not a separate requested category.
+
+## Collection notes
+
+- Reuse connected tools. Use shell HTTP requests and a browser when no connector covers the check. Save response status, final URL and redirects.
+- Respect robots rules and use low crawl concurrency. Do not request protected paths, secret files, user records, or unbounded query variants.
+- Exclude PDF/assets from HTML totals and count them separately if relevant. Label a sitemap-only count as such.
+- For Google Docs, connector indexes are UTF-16 positions. Insert tables, read cell indexes, then fill cells in descending index order. Use fresh revision guards for shared-document edits.
+- Store client evidence under an ignored/private output folder. Do not commit personal details or browser evidence as a skill asset.
+- TODO: Add a shared crawl/export helper only after repeated audits establish stable inputs. Keep site-specific code out of the skill.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hapy Website Audit"
+  short_description: "Create a branded A4 website audit in HTML and PDF"
+  default_prompt: "Use $website-audit to review this prospect's domain and business details, then create one self-contained HTML audit and a verified four-page A4 PDF using the bundled Hapy theme assets."
