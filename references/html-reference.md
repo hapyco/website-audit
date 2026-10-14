@@ -54,3 +54,7 @@ Use the same flat card style for the parallel SEO and page-inventory findings. T
 Full-width zoom and review bands use the same 3 px line inset 8 px from top, left and bottom. Use orange for the negative zoom finding and teal for the positive review block. The Agentic Browsing section heading is 20 CSS px on screen and print. Remove the portrait CTA left padding so its image aligns with the content margin.
 
 Keep the closing description short. Mention evolving web stacks and Hapy assessing whether a move to Astro suits the site, alongside the observed contact and performance work. Do not claim that a migration is automatically required or invent market-adoption statistics.
+
+## Booking attribution
+
+Use `{{BOOKING_URL}}` for every booking CTA. The renderer builds the URL from optional `booking_url` (default https://hapy.co/get-started/) and the prospect domain. It preserves other query parameters and the fragment, then sets utm_source=website-audit, utm_medium=report, utm_campaign=website-audit and utm_content=<public-domain>. Use the same URL in the HTML and PDF. Verify the rendered anchor, not only its visible label. Do not claim that analytics or a booking integration records the attribution unless that has been checked.

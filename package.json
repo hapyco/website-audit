@@ -1,6 +1,6 @@
 {
   "name": "@hapyco/website-audit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Hapy website audit skill and A4 HTML/PDF tools",
   "engines": {

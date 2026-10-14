@@ -85,7 +85,7 @@ node scripts/export_pdf.cjs /absolute/path/audit.html /absolute/path/audit.pdf
 
 Set `CHROME_PATH` if Chrome is not at the default macOS path. The export script uses `puppeteer-core`; if the runtime supplies it elsewhere, set `NODE_PATH` to that package folder.
 
-The JSON needs `client`, `contact`, `domain`, `date`, `pages`, and `images`. Each page has `section`, `title`, optional `lede`, and approved HTML `body`. The optional `assessment` object has `value` and `maximum`. Image placeholders use `{{IMG_NAME}}` with a matching local path in `images`. The bundled CTA uses `{{ASSET_HAMID}}`. See [the HTML reference](references/html-reference.md).
+The JSON needs `client`, `contact`, `domain`, `date`, `pages`, and `images`. Each page has `section`, `title`, optional `lede`, and approved HTML `body`. The optional `assessment` object has `value` and `maximum`. Image placeholders use `{{IMG_NAME}}` with a matching local path in `images`. The bundled CTA uses `{{ASSET_HAMID}}` and `{{BOOKING_URL}}`. Set optional `booking_url` to change the destination. See [the HTML reference](references/html-reference.md).
 
 Wait for fonts and images before export. Check page fit, confirm exactly four A4 pages, and inspect every rendered PDF page. Do not hide content to make a page fit.
 
@@ -99,3 +99,7 @@ Wait for fonts and images before export. Check page fit, confirm exactly four A4
 - `agents/openai.yaml`: Codex skill metadata.
 
 The fonts include their Open Font License files. Hapy's logo and portrait remain Hapy brand assets.
+
+## Booking link attribution
+
+Booking CTAs use `utm_source=website-audit`, `utm_medium=report`, `utm_campaign=website-audit`, and `utm_content=<prospect-domain>`. Existing destination parameters and fragments are retained. Use `{{BOOKING_URL}}` in custom CTA markup. The tags identify audit traffic; destination analytics must record them for reporting.

@@ -2,7 +2,7 @@
 name: website-audit
 description: Create Hapy Co's free website audit for a sales prospect from a domain and business details. Deliver a self-contained HTML audit and a visual four-page A4 PDF covering SEO, Google Business Profile, performance, sitemaps, AI visibility, security, page count, regional insights, competitors, responsiveness, a combined Design & UX review, and Google Lighthouse Agentic Browsing. Use for prospect audits and Astro migration qualification, not implementation or a full security assessment.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   source: "https://github.com/hapyco/website-audit"
 ---
 
@@ -80,3 +80,5 @@ Keep skill files in the global skills folder. Keep reports and evidence under ~/
 Use plain report headings, such as "[Business] website audit". Avoid slogans, dramatic contrasts or sales hooks. On the opening page, omit the redundant section label, keep all page titles at 32 CSS px, place the bold numerical assessment alone to its right, and keep the top-right audit/domain header on one line.
 
 Use descriptive titles on all pages: "[Business] website audit", "Design and usability", "Performance and technical health", and "Local visibility and competitors". Adapt them when the report content changes. Avoid paired slogans or dramatic claims.
+
+Every audit booking CTA must use a UTM-tagged link. Use `{{BOOKING_URL}}` in the HTML body or CTA template so the renderer adds `utm_source=website-audit`, `utm_medium=report`, `utm_campaign=website-audit`, and `utm_content` equal to the prospect's normalized public domain. Preserve the booking destination, existing query parameters and fragment. Do not put contact names, email addresses or other private intake data in UTMs. Verify the final HTML booking link has these parameters. Keep the same link in a requested PDF export. These tags identify audit traffic; they do not prove that destination analytics or booking attribution is configured.
